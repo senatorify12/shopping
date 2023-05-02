@@ -1,0 +1,38 @@
+python -m venv venv 
+venv\Scripts\activate
+django-admin startproject shopping .
+py manage.py startapp home
+py manage.py startapp userprofile
+py manage.py migrate 
+py manage.py runserver
+
+to cut server use ctrl + C 
+
+
+models (determins how our database architecture looks like...i.e how data is being stored)
+
+CharField(max_length=255)
+TextField()
+URLField()
+EmailFIeld()
+FileField()
+ImageField() 
+DateField()
+DateTimeField(auto_now = True, auto_add_now= True)
+SlugField()........ etc
+admin (admin prints out inputs from the client on the admin panel)
+
+forms (helps to make a duplicate/ replica of the client form on the server side)
+
+views (helps to get data/ impliment functionalities)
+
+urls(chains views to both templates and to the browser).
+
+templates
+
+
+CRUD methods we use in our ORM/ methods used in collecting data
+C --- Create(POST)
+R --- Read (GET)
+U --- Update(PUT, PATCH)
+D --- Delete (DELETE)

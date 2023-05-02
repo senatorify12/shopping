@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Home_page{% endblock title %}
+
+{% block header1 %}     {% include 'header1.html' %}   {% endblock header1 %}
+
+{% block header %}     {% include 'header.html' %}   {% endblock header %}
+
+{% block carousel %}     {% include 'carousel.html' %}   {% endblock carousel %}
+
+{% block content %}     
+
+
+<div class="container-fluid mt-5 mb-5" id="about">
+    <h2 class="text-center prod mt-4 mb-5">Welcome to ShoesByELite</h2>
+      <div class="row justify-content-center">
+          <div class="col-10 col-md-5">
+              <img src="{% static '' %}img/noah-smith-LkuH3Txi_gs-unsplash.jpg" class="w-100 h-100" alt="">
+          </div>
+          <div class="col-10 col-md-5">
+              <div class="w-100 lib">
+                  <h2>What we stand for</h2>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                      Rerum amet quod molestias natus eligendi aliquid corporis, 
+                      unde expedita saepe qui doloremque excepturi! Ex et esse impedit
+                      doloribus corrupti fugiat nostrum natus. Dolorem ea odio, et ad aut 
+                      ipsa maxime, architecto veritatis illum corporis inventore magni nam
+                      voluptatem temporibus, nesciunt recusandae 
+                      </p>
+                  <p>Lorem ipsum dolor sit amet consectetur
+                       adipisicing elit. At nemo veniam magnam fugit 
+                       quas modi mollitia sint iusto, impedit eligendi. 
+                       Quisquam voluptate odit consectetur corrupti sit ratione
+                        alias accusamus rem..</p>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="container-fluid mt-5 pt-5 pb-5 bg-light">
+      <h2 class="produ text-center mt-5 mb-5">Our Categories</h2>
+      <div class="row justify-content-center gy-3">      
+        {% if category %}
+            {% for items in category %}
+                <div class="col-10 col-sm-10 col-md-4">
+                    <div class="card w-100 h-75">
+                        <img src="{{items.img.url}}" class="card-img-top h-75" alt="...">
+                        <div class="card-body">
+                        <h5 class="card-title">{{items.title}}</h5>
+                        <p class="card-text">{{items.description}}</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}    
+        {% endif %}
+      </div>
+  </div>
+
+  <div class="container-fluid" id="service">
+      <div class="cave">
+          <h2 class="mb-3 mt-2 produ text-center">Our Services</h2>
+          <p class="text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Dicta officiis adipisci aliquid ratione incidunt atque nam 
+              iure cum error sint.</p>
+              <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      </div>
+  </div>
+
+
+{% endblock content %}
+
+{% block contact %} {% include 'contact.html' %}{% endblock contact %}
+
+{% block footer %} {% include 'footer.html' %}{% endblock footer %}
